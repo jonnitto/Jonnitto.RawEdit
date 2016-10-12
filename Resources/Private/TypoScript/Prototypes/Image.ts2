@@ -1,0 +1,48 @@
+prototype(Raw:Image) < prototype(Fusion:Tag) {
+	property = 'image'
+	asset = ${q(node).property(this.property)}
+	tagName = 'img'
+
+	maximumWidth = 720
+	maximumHeight = 720
+	allowCropping = false
+	allowUpScaling = false
+
+	@context {
+		asset = ${this.asset}
+		hasAsset = ${this.asset ? true : false}
+		maximumWidth = ${this.maximumWidth}
+		maximumHeight = ${this.maximumHeight}
+		allowCropping = ${this.allowCropping}
+		allowUpScaling = ${this.allowUpScaling}
+	}
+
+	attributes {
+		class = ${hasAsset? 'img-plain' : 'neos-handle'}
+		style = Fusion:RawArray {
+			margin = 'margin:1rem auto;'
+			maxWidth = 'max-width:100%;'
+			width = ${'width:' + maximumWidth + 'px;'}
+		}
+
+		src = Fusion:Case {
+			hasImage {
+				condition = ${hasAsset}
+				renderer = ImageUri {
+					asset = ${asset}
+					maximumWidth = ${maximumWidth}
+					maximumHeight = ${maximumHeight}
+					allowCropping = ${allowCropping}
+					allowUpScaling = ${allowUpScaling}
+				}
+			}
+			dummyImage {
+				condition = true
+				renderer = Fusion:ResourceUri {
+					package = 'TYPO3.Neos'
+					path = 'resource://TYPO3.Neos/Public/Images/dummy-image.svg'
+				}
+			}
+		}
+	}
+}

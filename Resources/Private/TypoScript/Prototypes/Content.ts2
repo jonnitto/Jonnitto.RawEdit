@@ -1,0 +1,50 @@
+prototype(Raw:Content) < prototype(Fusion:Tag) {
+	property = NULL
+	header = ${this.property}
+	innerTag = 'span'
+	outerTag = ${this.innerTag == 'div' ? 'div' : 'p'}
+	innerContent = ${this.property ? q(node).property(this.property) : false}
+	innerClass = false
+	editable = true
+
+	@if.innerContent = ${this.innerContent || this.property ? true : false}
+
+	@context {
+		property = ${this.property}
+		header = ${this.header}
+		outerTag = ${this.outerTag}
+		innerTag = ${this.innerTag}
+		innerContent = ${this.innerContent}
+		innerClass = ${this.innerClass}
+		editable = ${this.editable}
+	}
+
+	attributes {
+		class = Fusion:RawArray {
+			default = 'column neos-raw-content-contentcollection-container'
+		}
+	}
+
+	content = Fusion:Array {
+		header = Fusion:Tag {
+			tagName = 'header'
+			content = ${header}
+		}
+		content = Fusion:Tag {
+			tagName = ${outerTag}
+			content = Fusion:Tag {
+				attributes.class = ${innerClass}
+				tagName = ${innerTag}
+				content = ${innerContent}
+				@process.contentElementEditable = Fusion:Value {
+					@if.editable = ${editable}
+					value = ContentElementEditable
+				}
+			}
+			@process.contentElementWrapping = Fusion:Value {
+				@if.editable = ${editable}
+				value = ContentElementWrapping
+			}
+		}
+	}
+}

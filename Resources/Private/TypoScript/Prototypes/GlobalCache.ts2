@@ -1,0 +1,3 @@
+prototype(Fusion:GlobalCacheIdentifiers) {
+	renderingMode = ${node.context.currentRenderingMode.name}
+}

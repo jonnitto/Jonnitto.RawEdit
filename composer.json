@@ -1,0 +1,31 @@
+{
+    "name": "jonnitto/rawedit",
+    "type": "typo3-flow-plugin",
+    "description": "Raw content helpers for Neos CMS",
+    "version": "0.1.0",
+    "license": "MIT",
+    "keywords": ["flow", "neos", "raw", "editmode"],
+    "authors": [
+        {
+            "name": "Jon Uhlmann",
+            "email": "me@jonnitto.ch",
+            "homepage": "https://twitter.com/jonnitto",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/neos": "^2.3"
+    },
+    "autoload": {
+        "psr-0": {
+            "Jonnitto\\RawEdit": "Classes"
+        }
+    },
+    "extra": {
+        "marketplace-account": "me@jonnitto.ch",
+        "installer-name": "Jonnitto.RawEdit",
+        "neos": {
+            "package-key": "Jonnitto.RawEdit"
+        }
+    }
+}

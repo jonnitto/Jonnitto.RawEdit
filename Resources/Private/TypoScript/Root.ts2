@@ -1,0 +1,9 @@
+namespace: Fusion = TYPO3.TypoScript
+namespace: Raw = Jonnitto.RawEdit
+
+// Make this variable everywhere available
+root.@context {
+	rawContent = ${node.context.currentRenderingMode.name == 'rawContent' ? true : false}
+}
+
+include: Prototypes/**/*.ts2
