@@ -4,7 +4,12 @@
     "description": "Raw content helpers for Neos CMS",
     "version": "0.1.0",
     "license": "MIT",
-    "keywords": ["flow", "neos", "raw", "editmode"],
+    "keywords": [
+        "flow",
+        "neos",
+        "raw",
+        "editmode"
+    ],
     "authors": [
         {
             "name": "Jon Uhlmann",
@@ -26,6 +31,9 @@
         "installer-name": "Jonnitto.RawEdit",
         "neos": {
             "package-key": "Jonnitto.RawEdit"
-        }
+        },
+        "applied-flow-migrations": [
+            "TYPO3.FLOW3-201201261636"
+        ]
     }
 }
