@@ -6,4 +6,4 @@ root.@context {
 	rawContent = ${node.context.currentRenderingMode.name == 'rawContent' ? true : false}
 }
 
-include: Prototypes/**/*.ts2
+include: Prototypes/**/*.fusion

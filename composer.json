@@ -1,8 +1,7 @@
 {
     "name": "jonnitto/rawedit",
-    "type": "typo3-flow-plugin",
+    "type": "neos-plugin",
     "description": "Raw content helpers for Neos CMS",
-    "version": "0.1.0",
     "license": "MIT",
     "keywords": [
         "flow",
@@ -19,11 +18,11 @@
         }
     ],
     "require": {
-        "typo3/neos": "^2.3"
+        "typo3/neos": "^3.0"
     },
     "autoload": {
-        "psr-0": {
-            "Jonnitto\\RawEdit": "Classes"
+        "psr-4": {
+            "Jonnitto\\RawEdit\\": "Classes"
         }
     },
     "extra": {
