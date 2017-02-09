@@ -1,9 +1,12 @@
 namespace: Fusion = Neos.Fusion
 namespace: Raw = Jonnitto.RawEdit
 
-// Make this variable everywhere available
-root.@context {
-	rawContent = ${node.context.currentRenderingMode.name == 'rawContent' ? true : false}
+
+root.renderPageRaw {
+	@position = 'before editPreviewMode'
+	condition = ${node.context.currentRenderingMode.name == 'rawContent' ? true : false}
+	type = ${q(node).property('_nodeType') + '.RawDocument'}
 }
+
 
 include: Prototypes/**/*.fusion

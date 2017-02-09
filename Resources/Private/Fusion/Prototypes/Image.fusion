@@ -20,9 +20,10 @@ prototype(Raw:Image) < prototype(Fusion:Tag) {
 	attributes {
 		class = ${hasAsset? 'img-plain' : 'neos-handle'}
 		style = Fusion:RawArray {
-			margin = 'margin:1rem auto;'
-			maxWidth = 'max-width:100%;'
-			width = ${'width:' + maximumWidth + 'px;'}
+			margin = 'margin:1rem auto;display:block;'
+			size = 'width:auto;height:auto;'
+			maxHeight = ${'max-height:' + maximumHeight + 'px;'}
+			maxWidth = ${'max-width:' + maximumWidth + 'px;'}
 		}
 
 		src = Fusion:Case {

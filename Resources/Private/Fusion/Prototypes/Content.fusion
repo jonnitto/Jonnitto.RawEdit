@@ -29,6 +29,7 @@ prototype(Raw:Content) < prototype(Fusion:Tag) {
 		header = Fusion:Tag {
 			tagName = 'header'
 			content = ${header}
+			@if.hasHeader = ${header}
 		}
 		content = Fusion:Tag {
 			tagName = ${outerTag}
@@ -41,6 +42,7 @@ prototype(Raw:Content) < prototype(Fusion:Tag) {
 					value = ContentElementEditable
 				}
 			}
+
 			@process.contentElementWrapping = Fusion:Value {
 				@if.editable = ${editable}
 				value = ContentElementWrapping
