@@ -14,10 +14,8 @@ prototype(Raw:Page) < prototype(Page) {
 		templatePath = 'resource://Neos.Neos/Private/Templates/RawContentMode/Page/Default.html'
 		sectionName = 'body'
 
-		before = Fusion:Array {
-		}
-		after = Fusion:Array {
-		}
+		before = Fusion:Array
+		after = Fusion:Array
 
 		@context {
 			before = ${this.before}
