@@ -1,18 +1,18 @@
-prototype(Raw:Area) < prototype(Fusion:Tag) {
-	attributes.class = 'column neos-raw-content-contentcollection-container'
-	header = ''
+prototype(Jonnitto.RawEdit:Area) < prototype(Neos.Fusion:Tag) {
+    attributes.class = 'column neos-raw-content-contentcollection-container'
+    header = ''
 
-	prototype(Raw:Content) {
-		header = false
-		content.header.attributes.style = 'font-size:100%;margin:20px 0 10px;'
-	}
+    prototype(Jonnitto.RawEdit:Content) {
+        header = false
+        content.header.attributes.style = 'font-size:100%;margin:20px 0 10px;'
+    }
 
-	@context.header = ${this.header}
-	content = Fusion:Array {
-		header = Fusion:Tag {
-			@position = 'start 1'
-			tagName = 'header'
-			content = ${header}
-		}
-	}
+    @context.header = ${this.header}
+    content = Neos.Fusion:Array {
+        header = Neos.Fusion:Tag {
+            @position = 'start 1'
+            tagName = 'header'
+            content = ${header}
+        }
+    }
 }

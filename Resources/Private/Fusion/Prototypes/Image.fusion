@@ -1,49 +1,49 @@
-prototype(Raw:Image) < prototype(Fusion:Tag) {
-	property = 'image'
-	asset = ${q(node).property(this.property)}
-	tagName = 'img'
+prototype(Jonnitto.RawEdit:Image) < prototype(Neos.Fusion:Tag) {
+    property = 'image'
+    asset = ${q(node).property(this.property)}
+    tagName = 'img'
 
-	maximumWidth = 720
-	maximumHeight = 720
-	allowCropping = false
-	allowUpScaling = false
+    maximumWidth = 720
+    maximumHeight = 720
+    allowCropping = false
+    allowUpScaling = false
 
-	@context {
-		asset = ${this.asset}
-		hasAsset = ${this.asset ? true : false}
-		maximumWidth = ${this.maximumWidth}
-		maximumHeight = ${this.maximumHeight}
-		allowCropping = ${this.allowCropping}
-		allowUpScaling = ${this.allowUpScaling}
-	}
+    @context {
+        asset = ${this.asset}
+        hasAsset = ${this.asset ? true : false}
+        maximumWidth = ${this.maximumWidth}
+        maximumHeight = ${this.maximumHeight}
+        allowCropping = ${this.allowCropping}
+        allowUpScaling = ${this.allowUpScaling}
+    }
 
-	attributes {
-		class = ${hasAsset? 'img-plain' : 'neos-handle'}
-		style = Fusion:RawArray {
-			margin = 'margin:1rem auto;display:block;'
-			size = 'width:auto;height:auto;'
-			maxHeight = ${'max-height:' + maximumHeight + 'px;'}
-			maxWidth = ${'max-width:' + maximumWidth + 'px;'}
-		}
+    attributes {
+        class = ${hasAsset? 'img-plain' : 'neos-handle'}
+        style = Neos.Fusion:Array {
+            margin = 'margin:1rem auto;display:block;'
+            size = 'width:auto;height:auto;'
+            maxHeight = ${'max-height:' + maximumHeight + 'px;'}
+            maxWidth = ${'max-width:' + maximumWidth + 'px;'}
+        }
 
-		src = Fusion:Case {
-			hasImage {
-				condition = ${hasAsset}
-				renderer = ImageUri {
-					asset = ${asset}
-					maximumWidth = ${maximumWidth}
-					maximumHeight = ${maximumHeight}
-					allowCropping = ${allowCropping}
-					allowUpScaling = ${allowUpScaling}
-				}
-			}
-			dummyImage {
-				condition = true
-				renderer = Fusion:ResourceUri {
-					package = 'Neos.Neos'
-					path = 'resource://Neos.Neos/Public/Images/dummy-image.svg'
-				}
-			}
-		}
-	}
+        src = Neos.Fusion:Case {
+            hasImage {
+                condition = ${hasAsset}
+                renderer = ImageUri {
+                    asset = ${asset}
+                    maximumWidth = ${maximumWidth}
+                    maximumHeight = ${maximumHeight}
+                    allowCropping = ${allowCropping}
+                    allowUpScaling = ${allowUpScaling}
+                }
+            }
+            dummyImage {
+                condition = true
+                renderer = Neos.Fusion:ResourceUri {
+                    package = 'Neos.Neos'
+                    path = 'resource://Neos.Neos/Public/Images/dummy-image.svg'
+                }
+            }
+        }
+    }
 }

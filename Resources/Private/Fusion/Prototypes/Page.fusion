@@ -1,37 +1,37 @@
-prototype(Raw:Page) < prototype(Page) {
-	head {
-		stylesheets = Fusion:Array {
-			template = Fusion:Template {
-				templatePath = 'resource://Neos.Neos/Private/Templates/RawContentMode/Page/Default.html'
-				sectionName = 'headerIncludes'
-			}
-		}
-	}
+prototype(Jonnitto.RawEdit:Page) < prototype(Page) {
+    head {
+        stylesheets = Fusion:Array {
+            template = Fusion:Template {
+                templatePath = 'resource://Neos.Neos/Private/Templates/RawContentMode/Page/Default.html'
+                sectionName = 'headerIncludes'
+            }
+        }
+    }
 
-	bodyTag.attributes.class = 'neos-raw-content-mode'
+    bodyTag.attributes.class = 'neos-raw-content-mode'
 
-	body {
-		templatePath = 'resource://Neos.Neos/Private/Templates/RawContentMode/Page/Default.html'
-		sectionName = 'body'
+    body {
+        templatePath = 'resource://Neos.Neos/Private/Templates/RawContentMode/Page/Default.html'
+        sectionName = 'body'
 
-		before = Fusion:Array
-		after = Fusion:Array
+        before = Neos.Fusion:Array
+        after = Neos.Fusion:Array
 
-		@context {
-			before = ${this.before}
-			after = ${this.after}
-		}
+        @context {
+            before = ${this.before}
+            after = ${this.after}
+        }
 
-		allContentCollections  = Fusion:Array {
-			before = ${before}
-			before.@process.wrap = ${before ? '<div class="neos-raw-content-contentcollections">' + value + '</div>' : value}
-			contentCollections = PrimaryContent {
-				nodePath = '.'
-				default.renderer = RawContent
-			}
-			after = ${after}
-			after.@process.wrap = ${after ? '<div class="neos-raw-content-contentcollections">' + value + '</div>' : value}
-			br = '<br>'
-		}
-	}
+        allContentCollections  = Neos.Fusion:Array {
+            before = ${before}
+            before.@process.wrap = ${before ? '<div class="neos-raw-content-contentcollections">' + value + '</div>' : value}
+            contentCollections = PrimaryContent {
+                nodePath = '.'
+                default.renderer = RawContent
+            }
+            after = ${after}
+            after.@process.wrap = ${after ? '<div class="neos-raw-content-contentcollections">' + value + '</div>' : value}
+            br = '<br>'
+        }
+    }
 }
