@@ -1,9 +1,14 @@
-Jonnitto.RawEdit
-================
-
 [![Latest Stable Version](https://poser.pugx.org/jonnitto/iframe/v/stable)](https://packagist.org/packages/jonnitto/rawedit)
 [![Total Downloads](https://poser.pugx.org/jonnitto/rawedit/downloads)](https://packagist.org/packages/jonnitto/rawedit)
 [![License](https://poser.pugx.org/jonnitto/rawedit/license)](https://packagist.org/packages/jonnitto/rawedit)
+[![GitHub forks](https://img.shields.io/github/forks/jonnitto/Jonnitto.RawEdit.svg?style=social&label=Fork)](https://github.com/jonnitto/Jonnitto.RawEdit/fork)
+[![GitHub stars](https://img.shields.io/github/stars/jonnitto/Jonnitto.RawEdit.svg?style=social&label=Stars)](https://github.com/jonnitto/Jonnitto.RawEdit/stargazers)
+[![GitHub watchers](https://img.shields.io/github/watchers/jonnitto/Jonnitto.RawEdit.svg?style=social&label=Watch)](https://github.com/jonnitto/Jonnitto.RawEdit/subscription)
+[![GitHub followers](https://img.shields.io/github/followers/jonnitto.svg?style=social&label=Follow)](https://github.com/jonnitto/followers)
+[![Follow Jon on Twitter](https://img.shields.io/twitter/follow/jonnitto.svg?style=social&label=Follow)](https://twitter.com/jonnitto)
+
+Jonnitto.RawEdit
+================
 
 Raw content Helper for [Neos CMS](https://www.neos.io):
 
