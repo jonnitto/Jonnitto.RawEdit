@@ -37,12 +37,12 @@ prototype(Jonnitto.RawEdit:Content) < prototype(Neos.Fusion:Tag) {
                 attributes.class = ${innerClass}
                 tagName = ${innerTag}
                 content = ${innerContent}
-                @process.contentElementEditable = ContentElementEditable {
+                @process.contentElementEditable = Neos.Neos:ContentElementEditable {
                     @if.editable = ${editable}
                 }
             }
 
-            @process.contentElementWrapping = ContentElementWrapping {
+            @process.contentElementWrapping = Neos.Neos:ContentElementWrapping {
                 @if.editable = ${editable}
             }
         }

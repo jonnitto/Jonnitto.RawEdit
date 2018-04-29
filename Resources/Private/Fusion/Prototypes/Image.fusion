@@ -29,7 +29,7 @@ prototype(Jonnitto.RawEdit:Image) < prototype(Neos.Fusion:Tag) {
         src = Neos.Fusion:Case {
             hasImage {
                 condition = ${hasAsset}
-                renderer = ImageUri {
+                renderer = Neos.Neos:ImageUri {
                     asset = ${asset}
                     maximumWidth = ${maximumWidth}
                     maximumHeight = ${maximumHeight}

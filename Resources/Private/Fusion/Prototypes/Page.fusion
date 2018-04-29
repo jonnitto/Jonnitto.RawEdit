@@ -1,4 +1,4 @@
-prototype(Jonnitto.RawEdit:Page) < prototype(Page) {
+prototype(Jonnitto.RawEdit:Page) < prototype(Neos.Neos:Page) {
     head {
         stylesheets = Fusion:Array {
             template = Fusion:Template {
@@ -25,9 +25,9 @@ prototype(Jonnitto.RawEdit:Page) < prototype(Page) {
         allContentCollections  = Neos.Fusion:Array {
             before = ${before}
             before.@process.wrap = ${before ? '<div class="neos-raw-content-contentcollections">' + value + '</div>' : value}
-            contentCollections = PrimaryContent {
+            contentCollections = Neos.Neos:PrimaryContent {
                 nodePath = '.'
-                default.renderer = RawContent
+                default.renderer = Neos.Neos:RawContent
             }
             after = ${after}
             after.@process.wrap = ${after ? '<div class="neos-raw-content-contentcollections">' + value + '</div>' : value}
